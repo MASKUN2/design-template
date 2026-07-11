@@ -4,31 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{Screen title}} · {{PROJECT_NAME}}</title>
+<link rel="stylesheet" href="wireframe.css">
 <!--
   Copy this to NN-<name>.html (NN = two digits, e.g. 02-post-detail.html).
   Files starting with "_" are ignored by validate.py, so keep this template.
-  Rules (see ../spec/ui-design.md): self-contained, one hairline gray border,
-  system font, one fg/bg pair, auto light/dark, NO colour/hover/shadow/radius,
-  a blue <aside class="note"> at the top linking back to index.html.
+  Shared styles live in wireframe.css (link it, don't inline). Add only truly
+  page-specific rules in a small <style> block if you must.
+  Rules (see ../spec/ui-design.md): self-contained except the shared local
+  wireframe.css; one hairline gray border; system font; auto light/dark; NO
+  remote assets, colour, hover, shadow, or radius; a blue <aside class="note">
+  at the top linking back to index.html.
 -->
-<style>
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#111;background:#fff;line-height:1.6}
-  @media(prefers-color-scheme:dark){body{color:#eee;background:#111}}
-  a{color:inherit}
-  .wrap{max-width:672px;margin:0 auto;padding:3rem 1.5rem}
-  h1{font-size:1.6rem;font-weight:700;margin:.4rem 0}
-  .field,button{border:1px solid gray;background:transparent;color:inherit;font:inherit;padding:.5rem .75rem}
-  button{cursor:pointer;width:auto}
-  code{border:1px solid gray;padding:0 .25em;font-family:ui-monospace,monospace;font-size:.9em}
-  .note{border:1px solid #2563eb;color:#2563eb;padding:.9rem 1.1rem;margin-bottom:2rem;font-size:.85rem}
-  @media(prefers-color-scheme:dark){.note{border-color:#7ab8ff;color:#7ab8ff}}
-  .note a{color:inherit;text-decoration:underline}
-  .note h3{font-size:.9rem;margin:.5rem 0}
-  .note ul{margin:.4rem 0 0;padding-left:1.15rem}
-  .note li{margin:.3rem 0}
-  .note code{border:1px solid currentColor;padding:0 .25em}
-</style>
 </head>
 <body>
 <main class="wrap">

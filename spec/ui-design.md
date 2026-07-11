@@ -53,7 +53,9 @@ flash message.
 The HTML mockups are **bare wireframes** — structure and copy over styling, so
 nobody mistakes a mockup for final visual design. Each screen file:
 
-- **Self-contained**: no external assets/fonts/CDN; inline `<style>` only.
+- **Shared styles, no remote assets**: link the local
+  [`../wireframe/wireframe.css`](../wireframe/wireframe.css); add only truly
+  page-specific rules inline. No `http(s)`/CDN assets, fonts, or `@import`.
 - **Minimal CSS**: a single hairline `1px solid gray` border for all frames and
   dividers, system font, one `foreground`/`background` pair, auto light/dark via
   `@media (prefers-color-scheme: dark)`. No colour, hover, shadow, or radius.

@@ -1,0 +1,72 @@
+/* wireframe.css — shared bare-wireframe styles for every screen mockup.
+   Local & relative (no remote/CDN), so screens stay offline/CSP-friendly.
+   Rules: one hairline gray border for all frames/dividers, system font, a
+   single foreground/background pair, auto light/dark. No colour (except the
+   blue annotation note), hover, shadow, or radius. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+}
+@media (prefers-color-scheme: dark) {
+  body { color: #eee; background: #111; }
+}
+
+a { color: inherit; }
+
+.wrap { max-width: 672px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+h1 { font-size: 1.6rem; font-weight: 700; margin: .4rem 0; }
+h2 { font-size: 1.15rem; margin: .3rem 0; }
+.muted { opacity: .7; }
+
+code {
+  border: 1px solid gray;
+  padding: 0 .25em;
+  font-family: ui-monospace, monospace;
+  font-size: .9em;
+}
+
+/* Inputs & buttons — plain bordered boxes. */
+.field, button, input, select, textarea {
+  border: 1px solid gray;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: .5rem .75rem;
+}
+button { cursor: pointer; width: auto; padding: .3rem .7rem; }
+
+/* List / card primitives (used by list-style screens). */
+.list { margin-top: 2rem; }
+.card { margin-bottom: 2rem; }
+.card h2 a { text-decoration: none; }
+.meta { display: flex; flex-wrap: wrap; gap: .6rem; font-size: .8rem; opacity: .7; }
+.chip { border: 1px solid gray; padding: .05rem .5rem; text-decoration: none; }
+.excerpt { opacity: .7; font-size: .95rem; margin: .25rem 0 0; }
+
+/* Gallery list (index.html). */
+ol { padding-left: 1.25rem; }
+li { margin: .55rem 0; }
+
+/* Annotation note — the one splash of colour, marking meta-commentary (not UI). */
+.note {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  padding: .9rem 1.1rem;
+  margin-bottom: 2rem;
+  font-size: .85rem;
+}
+@media (prefers-color-scheme: dark) {
+  .note { border-color: #7ab8ff; color: #7ab8ff; }
+}
+.note a { color: inherit; text-decoration: underline; }
+.note h3 { font-size: .9rem; margin: .5rem 0; }
+.note ul { margin: .4rem 0 0; padding-left: 1.15rem; }
+.note li { margin: .3rem 0; }
+.note code { border: 1px solid currentColor; padding: 0 .25em; }

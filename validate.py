@@ -224,24 +224,34 @@ def check_ui(r: Report):
     ui = ROOT / "wireframe"
     index = read(ui / "index.html")
     r.check(index is not None, "index.html exists", "index.html missing")
+    r.check((ui / "wireframe.css").exists(),
+            "shared wireframe.css exists",
+            "wireframe/wireframe.css missing (screens share it)")
 
     screens = screen_files()
     r.check(bool(screens), f"{len(screens)} screen file(s) found",
             "no NN-*.html screens found in wireframe/", warn=True)
 
+    # A "remote" asset is a src/href to http(s) or a CSS @import — the shared,
+    # relative wireframe.css is allowed and expected.
     for f in screens:
         txt = read(f) or ""
         problems = []
         if 'href="index.html"' not in txt:
             problems.append("no link to index.html")
+        if 'wireframe.css' not in txt:
+            problems.append("does not link the shared wireframe.css")
         if "<footer" in txt:
             problems.append("uses <footer> for the note")
         if '<aside class="note"' not in txt:
             problems.append("no <aside class=note> annotation")
         if re.search(r'(src|href)\s*=\s*"https?:', txt) or "@import" in txt:
-            problems.append("references an external asset")
+            problems.append("references a remote asset")
         r.check(not problems, f"{f.name} ok", f"{f.name}: {'; '.join(problems)}")
 
+    if index is not None:
+        r.check("wireframe.css" in index, "index.html links wireframe.css",
+                "index.html does not link the shared wireframe.css")
     if index is not None and screens:
         missing = [f.name for f in screens if f.name not in index]
         r.check(not missing, "index.html links every screen",

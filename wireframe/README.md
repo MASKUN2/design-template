@@ -9,7 +9,9 @@ never mistaken for final visual design. See
 
 ## Conventions (enforced by `../validate.py`)
 
-- **Self-contained**: inline `<style>` only; no external assets/fonts/CDN.
+- **Shared styles, no remote assets**: every screen links the local
+  [`wireframe.css`](./wireframe.css); inline only truly page-specific rules. No
+  `http(s)`/CDN assets, fonts, or `@import`.
 - **Minimal CSS**: one hairline `1px solid gray` border for all frames/dividers,
   system font, one `foreground`/`background` pair, auto light/dark via
   `@media (prefers-color-scheme: dark)`. No colour, hover, shadow, or radius.
@@ -19,6 +21,7 @@ never mistaken for final visual design. See
 
 ## Files
 
+- [`wireframe.css`](./wireframe.css) — shared styles; every screen links it.
 - [`index.html`](./index.html) — gallery; must link every screen.
 - `_TEMPLATE.html` — copy this to `NN-<name>.html` (two-digit prefix) per screen.
   Ignored by the validator.

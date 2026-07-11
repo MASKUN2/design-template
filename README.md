@@ -50,7 +50,7 @@ Every child directory carries its own `README.md`.
 | [`glossary.csv`](./glossary.csv) | **Glossary** — machine-readable domain terms. |
 | [`domain/`](./domain/) | **Domain model** — Mermaid ER diagrams: overview + one file per aggregate root. |
 | [`api/`](./api/) | **API contract** — OpenAPI 3.1 (`api/openapi.yaml`). |
-| [`wireframe/`](./wireframe/) | **UI mockups** — one self-contained bare-wireframe HTML per screen + `index.html`. |
+| [`wireframe/`](./wireframe/) | **UI mockups** — one bare-wireframe HTML per screen (sharing `wireframe.css`) + `index.html`. |
 | [`validate.py`](./validate.py) | **Consistency linter** (stdlib only). |
 
 ## Validation
@@ -63,8 +63,9 @@ python3 validate.py -q     # failures + summary only
 Layer by layer: the glossary parses and its `Domain` terms match the aggregate
 roots; every aggregate is diagrammed in `domain/` (overview + own file); the
 OpenAPI spec is 3.1, has unique operationIds, no dangling `$ref`s, and a
-component schema per aggregate; and the wireframes are self-contained, carry an
-`<aside class="note">`, avoid `<footer>`, and are all linked from `index.html`.
+component schema per aggregate; and the wireframes link the shared
+`wireframe.css`, use no remote assets, carry an `<aside class="note">`, avoid
+`<footer>`, and are all linked from `index.html`.
 Non-zero exit on any error, so it drops into CI.
 
 ---
@@ -120,7 +121,8 @@ Work in this order (each step feeds the next):
 
 ## Wireframe conventions (`wireframe/*.html`)
 
-- **Self-contained**: inline `<style>` only; no external assets/fonts/CDN.
+- **Shared styles, no remote assets**: link the local `wireframe.css`; inline
+  only truly page-specific rules. No `http(s)`/CDN assets, fonts, or `@import`.
 - **Minimal CSS**: one hairline `1px solid gray` border for all frames/dividers,
   system font, one `foreground`/`background` pair, auto light/dark via
   `@media (prefers-color-scheme: dark)`. No colour, hover, shadow, or radius.
