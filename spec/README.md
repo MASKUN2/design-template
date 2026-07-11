@@ -16,8 +16,8 @@ the source of truth for **intent**.
 | [`ui-design.md`](./ui-design.md) | §7 UI & Visual Design |
 
 Related artifacts: [`../glossary.csv`](../glossary.csv),
-[`../domain-model/`](../domain-model/), [`../openapi.yaml`](../openapi.yaml),
-[`../wireframes/`](../wireframes/).
+[`../domain/`](../domain/), [`../api/openapi.yaml`](../api/openapi.yaml),
+[`../wireframe/`](../wireframe/).
 
 ---
 
@@ -44,7 +44,7 @@ Related artifacts: [`../glossary.csv`](../glossary.csv),
 ## 3. Domain Concepts
 
 Define each core concept in one or two sentences. Every **aggregate root** here
-must have a file in [`../domain-model/`](../domain-model/) and a `Domain` row in
+must have a file in [`../domain/`](../domain/) and a `Domain` row in
 [`../glossary.csv`](../glossary.csv).
 
 - **Item** — *EXAMPLE* — the central unit of content/data. Replace/delete.

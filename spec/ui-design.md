@@ -4,7 +4,7 @@ Part of the [{{PROJECT_NAME}} specification](./README.md).
 
 The visual language is part of the product, so it lives here — at the *intent*
 altitude (tokens, structure, patterns), not class names or markup. Concrete
-per-screen mockups live in [`../wireframes/`](../wireframes/).
+per-screen mockups live in [`../wireframe/`](../wireframe/).
 
 ## 7.1 Design principles
 - TODO(agent): 2–4 principles (e.g. content-first, minimal, calm).
@@ -48,7 +48,7 @@ flash message.
 
 ---
 
-## Mockup conventions (for `../wireframes/*.html`)
+## Mockup conventions (for `../wireframe/*.html`)
 
 The HTML mockups are **bare wireframes** — structure and copy over styling, so
 nobody mistakes a mockup for final visual design. Each screen file:

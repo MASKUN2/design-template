@@ -8,10 +8,10 @@ stack, and needs no configuration.
 
 Layers, in dependency order:
 
-    glossary.csv  ->  domain-model/  ->  openapi.yaml + wireframes/
+    glossary.csv  ->  domain/  ->  api/openapi.yaml + wireframe/
 
-Aggregates are auto-derived from domain-model/*.md and screens from
-wireframes/NN-*.html. Files whose name starts with "_" (e.g. _TEMPLATE.md) are
+Aggregates are auto-derived from domain/*.md and screens from
+wireframe/NN-*.html. Files whose name starts with "_" (e.g. _TEMPLATE.md) are
 ignored everywhere.
 
 Stdlib only. Run:
@@ -82,7 +82,7 @@ def read(path: Path) -> str | None:
 # --------------------------------------------------------------------------- #
 def derive_aggregates() -> list[str]:
     names = []
-    for f in sorted((ROOT / "domain-model").glob("*.md")):
+    for f in sorted((ROOT / "domain").glob("*.md")):
         if f.name == "README.md" or f.name.startswith("_"):
             continue
         names.append(f.stem[:1].upper() + f.stem[1:])
@@ -91,7 +91,7 @@ def derive_aggregates() -> list[str]:
 
 def screen_files() -> list[Path]:
     # NN-*.html — the leading digits already exclude index.html and _TEMPLATE.html
-    return sorted((ROOT / "wireframes").glob("[0-9][0-9]-*.html"))
+    return sorted((ROOT / "wireframe").glob("[0-9][0-9]-*.html"))
 
 
 def mermaid_entities(text: str) -> set[str]:
@@ -174,25 +174,25 @@ def check_glossary(r: Report, aggregates):
 
 
 def check_domain_model(r: Report, aggregates):
-    r.layer("2. Domain model  (domain-model/)")
+    r.layer("2. Domain model  (domain/)")
     if not aggregates:
-        r.warn("no aggregate files found in domain-model/ (add one per aggregate root)")
+        r.warn("no aggregate files found in domain/ (add one per aggregate root)")
         return
-    readme = read(ROOT / "domain-model" / "README.md") or ""
+    readme = read(ROOT / "domain" / "README.md") or ""
     ents = mermaid_entities(readme)
     for name in aggregates:
         r.check(name.upper() in ents,
                 f"overview ERD includes entity {name}",
-                f"domain-model/README.md ERD missing entity {name}")
-        txt = read(ROOT / "domain-model" / f"{name.lower()}.md") or ""
+                f"domain/README.md ERD missing entity {name}")
+        txt = read(ROOT / "domain" / f"{name.lower()}.md") or ""
         r.check(name.upper() in mermaid_entities(txt),
                 f"{name.lower()}.md diagrams {name}",
                 f"{name.lower()}.md missing a {name} entity block")
 
 
 def check_api_spec(r: Report, aggregates):
-    r.layer("3. API spec  (openapi.yaml)")
-    text = read(ROOT / "openapi.yaml")
+    r.layer("3. API spec  (api/openapi.yaml)")
+    text = read(ROOT / "api" / "openapi.yaml")
     if text is None:
         r.fail("openapi.yaml not found")
         return
@@ -220,14 +220,14 @@ def check_api_spec(r: Report, aggregates):
 
 
 def check_ui(r: Report):
-    r.layer("4. Wireframes  (wireframes/)")
-    ui = ROOT / "wireframes"
+    r.layer("4. Wireframes  (wireframe/)")
+    ui = ROOT / "wireframe"
     index = read(ui / "index.html")
     r.check(index is not None, "index.html exists", "index.html missing")
 
     screens = screen_files()
     r.check(bool(screens), f"{len(screens)} screen file(s) found",
-            "no NN-*.html screens found in wireframes/", warn=True)
+            "no NN-*.html screens found in wireframe/", warn=True)
 
     for f in screens:
         txt = read(f) or ""
@@ -251,7 +251,7 @@ def check_ui(r: Report):
 def main():
     r = Report()
     print("Validating design artifacts "
-          "(glossary → domain-model → openapi + wireframes)")
+          "(glossary → domain → api + wireframe)")
     aggregates = derive_aggregates()
 
     check_glossary(r, aggregates)
