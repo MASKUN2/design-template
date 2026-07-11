@@ -1,6 +1,6 @@
 # 4. Functional Requirements
 
-Part of the [{{PROJECT_NAME}} specification](./README.md). Each bullet is one
+Part of the [Quill specification](./README.md). Each bullet is one
 testable capability, grouped by audience.
 
 ## 4.1 Authoring (Author)

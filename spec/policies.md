@@ -1,6 +1,6 @@
 # 5. Policies & Business Rules
 
-Part of the [{{PROJECT_NAME}} specification](./README.md). Non-negotiable rules,
+Part of the [Quill specification](./README.md). Non-negotiable rules,
 numbered so other docs can cite them (e.g. `§5.2`).
 
 ## 5.1 Content visibility

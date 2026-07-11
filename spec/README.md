@@ -1,6 +1,6 @@
-# {{PROJECT_NAME}} — Product Specification
+# Quill — Product Specification
 
-The **what** and the **why** of {{PROJECT_NAME}}: its purpose, the features it
+The **what** and the **why** of Quill: its purpose, the features it
 must provide, and the rules that govern them. Free of implementation detail — no
 frameworks, file paths, or code. The source of truth for **intent**.
 
@@ -20,7 +20,7 @@ Related: [`../glossary.csv`](../glossary.csv), [`../domain/`](../domain/),
 
 ## 1. Purpose & Vision
 
-{{PROJECT_NAME}} is a small content-publishing site for a single author. The
+Quill is a small content-publishing site for a single author. The
 author writes **Posts**, keeps them private as drafts, and publishes them when
 ready; anyone on the web can read what's published. It optimises for a
 frictionless write-and-publish loop and a fast, clean reading experience.

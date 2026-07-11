@@ -42,9 +42,9 @@ dangling `$ref`s, and the wireframes share `wireframe.css`, carry an annotation
 note, use no remote assets, and are all linked from `index.html`. Non-zero exit
 on any error — CI-friendly.
 
-To instantiate, fill in the artifacts by analysing the worked example (`Post`)
-and `validate.py`; finish when the validator is green with no `{{PLACEHOLDER}}`
-left.
+To use it, adapt the worked example — a small publishing app called **Quill** —
+to your product: rename Quill, replace the `Post` domain with your own
+aggregates, and add your screens. Keep `validate.py` green.
 
 ## Requirements
 

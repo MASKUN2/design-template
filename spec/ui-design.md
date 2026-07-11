@@ -1,6 +1,6 @@
 # 7. UI & Visual Design
 
-Part of the [{{PROJECT_NAME}} specification](./README.md). The visual language at
+Part of the [Quill specification](./README.md). The visual language at
 the *intent* altitude — tokens, structure, patterns. Concrete per-screen mockups
 live in [`../wireframe/`](../wireframe/).
 
