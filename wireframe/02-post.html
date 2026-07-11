@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes on shipping small software · {{PROJECT_NAME}}</title>
+<link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+<main class="wrap">
+  <aside class="note">
+    <a href="index.html">← UI screens</a>
+    <h3>Post detail (<code>/posts/{slug}</code>)</h3>
+    <ul>
+      <li>Reads one published post; a draft or unknown slug is 404.</li>
+      <li>Back link, meta row (date), title, then the Markdown body.</li>
+    </ul>
+  </aside>
+
+  <a class="muted" href="01-home.html">← Back</a>
+
+  <article>
+    <div class="meta" style="margin-top:1rem"><time>2026-02-14</time></div>
+    <h1>Notes on shipping small software</h1>
+    <p>The smallest thing that works usually beats the cleverest thing that
+      might. Ship it, watch it, then decide what to add.</p>
+    <h2>Keep the loop short</h2>
+    <p>A fast feedback loop is worth more than any single feature. Optimise for
+      the time between an idea and seeing it run.</p>
+    <pre><code>build → run → observe → decide</code></pre>
+    <p>Everything else is negotiable.</p>
+  </article>
+</main>
+</body>
+</html>

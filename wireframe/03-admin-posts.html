@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts · {{PROJECT_NAME}}</title>
+<link rel="stylesheet" href="wireframe.css">
+<style>
+  .toolbar { display: flex; align-items: center; justify-content: space-between; }
+  .row { display: flex; align-items: center; justify-content: space-between;
+         gap: 1rem; padding: .8rem 0; border-top: 1px solid gray; }
+  .row .left { display: flex; align-items: center; gap: .6rem; min-width: 0; }
+  .pill { border: 1px solid gray; padding: .05rem .5rem; font-size: .75rem; }
+  .ops { display: flex; gap: .6rem; font-size: .85rem; white-space: nowrap; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <aside class="note">
+    <a href="index.html">← UI screens</a>
+    <h3>Post dashboard (<code>/admin</code>)</h3>
+    <ul>
+      <li>Author-only. Lists all posts, drafts included, newest first.</li>
+      <li>Each row: status label, date, title, and Edit / Delete.</li>
+      <li>"New post" starts the editor.</li>
+    </ul>
+  </aside>
+
+  <div class="toolbar">
+    <h1>Posts</h1>
+    <a href="04-post-editor.html"><button type="button">New post</button></a>
+  </div>
+
+  <div style="margin-top:1.5rem">
+    <div class="row">
+      <div class="left">
+        <span class="pill">Published</span>
+        <time class="muted">2026-02-14</time>
+        <span>Notes on shipping small software</span>
+      </div>
+      <div class="ops"><a href="02-post.html">View</a><a href="04-post-editor.html">Edit</a><a href="#">Delete</a></div>
+    </div>
+    <div class="row">
+      <div class="left">
+        <span class="pill">Draft</span>
+        <time class="muted">—</time>
+        <span>Untitled draft</span>
+      </div>
+      <div class="ops"><a href="04-post-editor.html">Edit</a><a href="#">Delete</a></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

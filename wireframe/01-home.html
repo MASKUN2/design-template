@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home · {{PROJECT_NAME}}</title>
+<link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+<main class="wrap">
+  <aside class="note">
+    <a href="index.html">← UI screens</a>
+    <h3>Home (<code>/</code>)</h3>
+    <ul>
+      <li>Public landing: published posts, newest first.</li>
+      <li>Each row: title link, publish date, short excerpt.</li>
+      <li>Empty state: "No posts yet."</li>
+    </ul>
+  </aside>
+
+  <header>
+    <h1>{{PROJECT_NAME}}</h1>
+    <p class="muted">A short site tagline.</p>
+  </header>
+
+  <div class="list">
+    <article class="card">
+      <div class="meta"><time>2026-02-14</time></div>
+      <h2><a href="02-post.html">Notes on shipping small software</a></h2>
+      <p class="excerpt">Why the smallest thing that works usually beats the
+        cleverest thing that might.</p>
+    </article>
+    <article class="card">
+      <div class="meta"><time>2026-01-30</time></div>
+      <h2><a href="02-post.html">A quiet week with the terminal</a></h2>
+      <p class="excerpt">Small tools, plain text, and the pleasure of a fast
+        feedback loop.</p>
+    </article>
+  </div>
+</main>
+</body>
+</html>

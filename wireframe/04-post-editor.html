@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit post · {{PROJECT_NAME}}</title>
+<link rel="stylesheet" href="wireframe.css">
+<style>
+  .form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+  .form label { display: flex; flex-direction: column; gap: .3rem; font-size: .85rem; }
+  .form textarea { min-height: 14rem; font-family: ui-monospace, monospace; }
+  .actions { display: flex; gap: .75rem; align-items: center; }
+  .actions .spacer { flex: 1; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <aside class="note">
+    <a href="index.html">← UI screens</a>
+    <h3>Post editor (<code>/admin/posts/{id}</code>)</h3>
+    <ul>
+      <li>Author-only. Create or edit a post; the same form serves both.</li>
+      <li>Title, slug, status, and the Markdown body.</li>
+      <li>Save persists; Delete is permanent (with a confirmation).</li>
+    </ul>
+  </aside>
+
+  <a class="muted" href="03-admin-posts.html">← Posts</a>
+  <h1 style="margin-top:1rem">Edit post</h1>
+
+  <form class="form">
+    <label>Title
+      <input class="field" value="Notes on shipping small software">
+    </label>
+    <label>Slug
+      <input class="field" value="notes-on-shipping-small-software">
+    </label>
+    <label>Status
+      <select class="field">
+        <option>Draft</option>
+        <option selected>Published</option>
+      </select>
+    </label>
+    <label>Body (Markdown)
+      <textarea class="field">The smallest thing that works usually beats the cleverest thing that might.
+
+## Keep the loop short
+A fast feedback loop is worth more than any single feature.</textarea>
+    </label>
+    <div class="actions">
+      <button type="button">Save</button>
+      <span class="spacer"></span>
+      <button type="button">Delete</button>
+    </div>
+  </form>
+</main>
+</body>
+</html>

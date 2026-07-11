@@ -6,7 +6,6 @@
 <title>{{PROJECT_NAME}} — UI screens</title>
 <link rel="stylesheet" href="wireframe.css">
 <style>
-  /* page-specific: gallery section heading rule */
   h2 { margin-top: 2.5rem; border-bottom: 1px solid gray; padding-bottom: .4rem; }
 </style>
 </head>
@@ -14,9 +13,16 @@
 <main class="wrap">
   <h1>{{PROJECT_NAME}} — UI screens</h1>
 
-  <h2>Screens</h2>
+  <h2>Public</h2>
   <ol>
-    <li><a href="01-example.html">Example screen</a> — <code>/example</code></li>
+    <li><a href="01-home.html">Home</a> — <code>/</code></li>
+    <li><a href="02-post.html">Post detail</a> — <code>/posts/{slug}</code></li>
+  </ol>
+
+  <h2>Author</h2>
+  <ol start="3">
+    <li><a href="03-admin-posts.html">Post dashboard</a> — <code>/admin</code></li>
+    <li><a href="04-post-editor.html">Post editor</a> — <code>/admin/posts/{id}</code></li>
   </ol>
 </main>
 </body>
