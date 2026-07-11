@@ -19,8 +19,6 @@ erDiagram
     }
 ```
 
-> Add each aggregate as an entity and draw the relationships between them.
-
 ## Legend
 
 - **PK** primary key · **UK** unique key · **FK** foreign key.

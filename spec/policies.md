@@ -1,21 +1,15 @@
 # 5. Policies & Business Rules
 
-Part of the [{{PROJECT_NAME}} specification](./README.md).
+Part of the [{{PROJECT_NAME}} specification](./README.md). Non-negotiable rules,
+numbered so other docs can cite them (e.g. `§5.2`).
 
-The non-negotiable rules. They hold regardless of how the system is built.
-Number them so other docs can cite them (e.g. `§5.2`).
-
-## 5.1 {{Rule area, e.g. Content visibility}}
-- TODO(agent)
+## 5.1 {{Rule area}}
 
 ## 5.2 Identifiers
-- TODO(agent): e.g. "Every resource has a unique, URL-safe slug; reuse is rejected."
 
 ## 5.3 Relationships & integrity
-- TODO(agent): required relations, cascade/detach behaviour.
 
-## 5.4 {{Authorisation / other}}
-- TODO(agent)
+## 5.4 {{Authorisation}}
 
 ---
 
@@ -23,10 +17,10 @@ Number them so other docs can cite them (e.g. `§5.2`).
 
 | Area | Requirement |
 |---|---|
-| **Performance** | TODO(agent) |
-| **Hosting** | TODO(agent) |
-| **Security** | TODO(agent) |
-| **Backup** | TODO(agent) |
-| **Accessibility** | TODO(agent) |
-| **Internationalisation** | TODO(agent): UI language + which fields may be non-ASCII |
-| **Maintainability** | TODO(agent) |
+| **Performance** | |
+| **Hosting** | |
+| **Security** | |
+| **Backup** | |
+| **Accessibility** | |
+| **Internationalisation** | |
+| **Maintainability** | |

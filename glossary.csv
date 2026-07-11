@@ -1,7 +1,7 @@
 term,category,definition
-Item,Domain,"EXAMPLE aggregate root — replace with your own. The central unit of content/data the app manages."
-Draft,State,"EXAMPLE — an entity saved but not yet published/visible."
-Published,State,"EXAMPLE — an entity visible to end users."
-Slug,Identifier,"EXAMPLE — a unique, URL-safe identifier for a resource."
-Author,Actor,"EXAMPLE — a privileged user who creates/edits content."
-Reader,Actor,"EXAMPLE — an anonymous end user who only reads."
+Item,Domain,"The central unit of content/data the app manages."
+Draft,State,"An entity saved but not yet published or visible."
+Published,State,"An entity visible to end users."
+Slug,Identifier,"A unique, URL-safe identifier for a resource."
+Author,Actor,"A privileged user who creates and edits content."
+Reader,Actor,"An anonymous end user who only reads."

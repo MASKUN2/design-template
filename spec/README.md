@@ -1,10 +1,8 @@
 # {{PROJECT_NAME}} — Product Specification
 
 The **what** and the **why** of {{PROJECT_NAME}}: its purpose, the features it
-must provide, and the rules that govern them. Intentionally free of
-implementation detail — no frameworks, file paths, or code. When behaviour and
-this document disagree, treat it as a bug in one of them and reconcile — this is
-the source of truth for **intent**.
+must provide, and the rules that govern them. Free of implementation detail — no
+frameworks, file paths, or code. The source of truth for **intent**.
 
 ## Contents
 
@@ -15,21 +13,16 @@ the source of truth for **intent**.
 | [`policies.md`](./policies.md) | §5 Policies & Business Rules, §6 Non-Functional Requirements |
 | [`ui-design.md`](./ui-design.md) | §7 UI & Visual Design |
 
-Related artifacts: [`../glossary.csv`](../glossary.csv),
-[`../domain/`](../domain/), [`../api/openapi.yaml`](../api/openapi.yaml),
-[`../wireframe/`](../wireframe/).
+Related: [`../glossary.csv`](../glossary.csv), [`../domain/`](../domain/),
+[`../api/openapi.yaml`](../api/openapi.yaml), [`../wireframe/`](../wireframe/).
 
 ---
 
 ## 1. Purpose & Vision
 
-> TODO(agent): what is {{PROJECT_NAME}}, for whom, and why does it exist?
-
 ### Goals
-- TODO(agent)
 
 ### Non-Goals
-- TODO(agent)
 
 ---
 
@@ -37,27 +30,20 @@ Related artifacts: [`../glossary.csv`](../glossary.csv),
 
 | Actor | Description | How they're identified |
 |---|---|---|
-| **{{Actor}}** | TODO(agent) | TODO(agent) |
 
 ---
 
 ## 3. Domain Concepts
 
-Define each core concept in one or two sentences. Every **aggregate root** here
-must have a file in [`../domain/`](../domain/) and a `Domain` row in
-[`../glossary.csv`](../glossary.csv).
-
-- **Item** — *EXAMPLE* — the central unit of content/data. Replace/delete.
+- **Item** — the central unit of content/data.
 
 ---
 
 ## 8. Out of Scope (this version)
 
-- TODO(agent): explicitly list what is NOT being built, to bound the work.
-
 ---
 
 ## 9. Glossary
 
-The canonical, machine-readable glossary is [`../glossary.csv`](../glossary.csv).
-Keep the `Domain` rows in sync with the aggregate roots.
+Canonical vocabulary: [`../glossary.csv`](../glossary.csv). The `Domain` rows are
+the aggregate roots.

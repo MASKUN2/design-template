@@ -1,8 +1,5 @@
 # Item — aggregate root
 
-> **EXAMPLE aggregate.** Replace with your own domain, or delete once you've
-> added real aggregates. It exists so the template validates out of the box.
-
 The central unit of content/data the app manages. See the
 [full ERD](./README.md).
 

@@ -18,7 +18,7 @@ and edit down.
 ## Layout
 
 ```
-├── README.md          # this file (overview + the agent protocol)
+├── README.md          # this file (overview)
 ├── VERSION
 ├── validate.py        # consistency linter (auto-derive, no config)
 ├── glossary.csv       # term,category,definition
@@ -42,41 +42,9 @@ dangling `$ref`s, and the wireframes share `wireframe.css`, carry an annotation
 note, use no remote assets, and are all linked from `index.html`. Non-zero exit
 on any error — CI-friendly.
 
----
-
-# For AI agents
-
-You are turning this template into a real design surface. **Learn the shape from
-the worked example** (`domain/item.md`, `wireframe/01-example.html`, the `/items`
-paths and `Item` schema, the `Item` glossary row) — there are no separate
-template files. Finish when `python3 validate.py` is green with no
-`{{PLACEHOLDER}}` or `TODO(agent:)` left.
-
-**Rules**
-
-1. Spec is *intent*, not implementation — no frameworks, paths, or code in `spec/`.
-2. `domain/`, `api/`, and `wireframe/` describe the real system — keep them in sync.
-3. Keep `validate.py` green; run it often.
-
-**Protocol**
-
-1. Copy these files into a `design/` directory at your repo root; replace every
-   `{{PROJECT_NAME}}`.
-2. Write `spec/` (purpose, actors, domain, functional, policies, non-functional,
-   UI). Resolve every `TODO(agent:)`.
-3. Fill `glossary.csv` — one `Domain` row per aggregate root (the set must equal
-   your `domain/*.md` files).
-4. Model the domain: one `domain/<name>.md` per aggregate (Mermaid entity =
-   filename UPPERCASED) plus the overview ERD in `domain/README.md`.
-5. Write `api/openapi.yaml` (OpenAPI 3.1): one component schema per aggregate.
-6. Draw one `wireframe/NN-<name>.html` per screen and link each from
-   `index.html`.
-7. Set `VERSION`; delete the `Item` example once real content replaces it.
-
-**Wireframe conventions** — bare wireframes: link the shared `wireframe.css`
-(no remote assets), one hairline gray border, system font, auto light/dark, no
-colour/hover/shadow; a blue `<aside class="note">` at the top describing the
-screen + route and linking back to `index.html`.
+To instantiate, fill in the artifacts by analysing the worked example (`Item`)
+and `validate.py`; finish when the validator is green with no `{{PLACEHOLDER}}`
+left.
 
 ## Requirements
 
