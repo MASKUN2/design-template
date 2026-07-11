@@ -1,5 +1,5 @@
 term,category,definition
-Item,Domain,"The central unit of content/data the app manages."
+Post,Domain,"The central unit of content the app manages."
 Draft,State,"An entity saved but not yet published or visible."
 Published,State,"An entity visible to end users."
 Slug,Identifier,"A unique, URL-safe identifier for a resource."

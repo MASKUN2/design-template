@@ -35,7 +35,7 @@ Related: [`../glossary.csv`](../glossary.csv), [`../domain/`](../domain/),
 
 ## 3. Domain Concepts
 
-- **Item** — the central unit of content/data.
+- **Post** — the central unit of content.
 
 ---
 

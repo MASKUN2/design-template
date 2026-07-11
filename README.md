@@ -12,7 +12,7 @@ mkdir -p /path/to/your-repo/design && cp -R ./* /path/to/your-repo/design/
 cd /path/to/your-repo/design && python3 validate.py   # stdlib only, no config
 ```
 
-It validates green against a small worked example (`Item`), so you start passing
+It validates green against a small worked example (`Post`), so you start passing
 and edit down.
 
 ## Layout
@@ -42,7 +42,7 @@ dangling `$ref`s, and the wireframes share `wireframe.css`, carry an annotation
 note, use no remote assets, and are all linked from `index.html`. Non-zero exit
 on any error — CI-friendly.
 
-To instantiate, fill in the artifacts by analysing the worked example (`Item`)
+To instantiate, fill in the artifacts by analysing the worked example (`Post`)
 and `validate.py`; finish when the validator is green with no `{{PLACEHOLDER}}`
 left.
 

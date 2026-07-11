@@ -8,84 +8,84 @@ servers:
     description: Local development
 
 tags:
-  - name: items
+  - name: posts
 
 security: []
 
 paths:
-  /items:
+  /posts:
     get:
-      tags: [items]
-      summary: List items
-      operationId: listItems
+      tags: [posts]
+      summary: List posts
+      operationId: listPosts
       responses:
         "200":
-          description: Items
+          description: Posts
           content:
             application/json:
               schema:
                 type: array
-                items: { $ref: "#/components/schemas/Item" }
+                items: { $ref: "#/components/schemas/Post" }
     post:
-      tags: [items]
-      summary: Create an item
-      operationId: createItem
+      tags: [posts]
+      summary: Create a post
+      operationId: createPost
       security:
         - bearerAuth: []
       requestBody:
         required: true
         content:
           application/json:
-            schema: { $ref: "#/components/schemas/CreateItem" }
+            schema: { $ref: "#/components/schemas/CreatePost" }
       responses:
         "201":
           description: Created
           content:
             application/json:
-              schema: { $ref: "#/components/schemas/Item" }
+              schema: { $ref: "#/components/schemas/Post" }
         "400": { $ref: "#/components/responses/BadRequest" }
         "401": { $ref: "#/components/responses/Unauthorized" }
 
-  /items/{id}:
+  /posts/{id}:
     parameters:
       - name: id
         in: path
         required: true
         schema: { type: string }
     get:
-      tags: [items]
-      summary: Get one item
-      operationId: getItem
+      tags: [posts]
+      summary: Get one post
+      operationId: getPost
       responses:
         "200":
-          description: The item
+          description: The post
           content:
             application/json:
-              schema: { $ref: "#/components/schemas/Item" }
+              schema: { $ref: "#/components/schemas/Post" }
         "404": { $ref: "#/components/responses/NotFound" }
     patch:
-      tags: [items]
-      summary: Update an item
-      operationId: updateItem
+      tags: [posts]
+      summary: Update a post
+      operationId: updatePost
       security:
         - bearerAuth: []
       requestBody:
         required: true
         content:
           application/json:
-            schema: { $ref: "#/components/schemas/CreateItem" }
+            schema: { $ref: "#/components/schemas/CreatePost" }
       responses:
         "200":
           description: Updated
           content:
             application/json:
-              schema: { $ref: "#/components/schemas/Item" }
+              schema: { $ref: "#/components/schemas/Post" }
         "401": { $ref: "#/components/responses/Unauthorized" }
         "404": { $ref: "#/components/responses/NotFound" }
     delete:
-      tags: [items]
-      summary: Delete an item
-      operationId: deleteItem
+      tags: [posts]
+      summary: Delete a post
+      operationId: deletePost
       security:
         - bearerAuth: []
       responses:
@@ -129,7 +129,7 @@ components:
               items: { type: string }
         error: { type: string }
 
-    Item:
+    Post:
       type: object
       required: [id, slug, title, status, createdAt, updatedAt]
       properties:
@@ -139,7 +139,7 @@ components:
         status: { type: string, enum: [DRAFT, PUBLISHED] }
         createdAt: { type: string, format: date-time }
         updatedAt: { type: string, format: date-time }
-    CreateItem:
+    CreatePost:
       type: object
       required: [title]
       properties:

@@ -1,11 +1,10 @@
-# Item — aggregate root
+# Post — aggregate root
 
-The central unit of content/data the app manages. See the
-[full ERD](./README.md).
+The central unit of content the app manages. See the [full ERD](./README.md).
 
 ```mermaid
 erDiagram
-    ITEM {
+    POST {
         string id PK
         string slug UK
         string title
@@ -32,4 +31,4 @@ erDiagram
 ## Invariants & rules
 
 - `slug` is unique and URL-safe.
-- Drafts are private; only published items are publicly readable.
+- Drafts are private; only published posts are publicly readable.
