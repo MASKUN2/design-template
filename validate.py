@@ -11,8 +11,8 @@ Layers, in dependency order:
     glossary.csv  ->  domain/  ->  api/openapi.yaml + wireframe/
 
 Aggregates are auto-derived from domain/*.md and screens from
-wireframe/NN-*.html. Files whose name starts with "_" (e.g. _TEMPLATE.md) are
-ignored everywhere.
+wireframe/NN-*.html. Files whose name starts with "_" are ignored everywhere
+(handy for scratch/draft files).
 
 Stdlib only. Run:
     python3 validate.py            # full report
@@ -90,7 +90,7 @@ def derive_aggregates() -> list[str]:
 
 
 def screen_files() -> list[Path]:
-    # NN-*.html — the leading digits already exclude index.html and _TEMPLATE.html
+    # NN-*.html — the leading digits already exclude index.html and _*.html
     return sorted((ROOT / "wireframe").glob("[0-9][0-9]-*.html"))
 
 

@@ -64,5 +64,5 @@ nobody mistakes a mockup for final visual design. Each screen file:
   to `index.html`.
 - Real sample copy; content that would be user-authored can be shown as-is.
 
-Copy `_TEMPLATE.html` for each new screen; `index.html` links them all.
-`validate.py` checks these conventions structurally.
+Follow `01-example.html` as the pattern for each new screen; `index.html` links
+them all. `validate.py` checks these conventions structurally.
